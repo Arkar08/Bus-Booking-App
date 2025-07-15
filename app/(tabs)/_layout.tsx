@@ -12,7 +12,7 @@ const Tabslayout = () => {
         headerShown: false,
         tabBarStyle: {
           position: "absolute",
-          bottom: 20,
+          bottom: 34,
           left: 16,
           right: 16,
           height: 72,
@@ -30,7 +30,7 @@ const Tabslayout = () => {
           tabBarIcon: ({ focused }) => (
             <View
               style={{
-                paddingTop: 10,
+                paddingTop: 15,
                 alignItems: "center",
                 width: width / 5,
               }}
@@ -59,7 +59,7 @@ const Tabslayout = () => {
           tabBarIcon: ({ focused }) => (
             <View
               style={{
-                paddingTop: 10,
+                paddingTop: 15,
                 alignItems: "center",
                 width: width / 5,
               }}
@@ -88,7 +88,7 @@ const Tabslayout = () => {
           tabBarIcon: ({ focused }) => (
             <View
               style={{
-                paddingTop: 10,
+                paddingTop: 15,
                 alignItems: "center",
                 width: width / 5,
               }}
