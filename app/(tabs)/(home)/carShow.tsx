@@ -1,22 +1,29 @@
-import ButtonField from '@/components/ButtonField'
-import { useRouter } from 'expo-router'
-import React from 'react'
-import { Text } from 'react-native'
-import { SafeAreaView } from 'react-native-safe-area-context'
+import CarCard from '@/components/CarCard';
+import Feather from '@expo/vector-icons/Feather';
+import React from 'react';
+import { Text, View } from 'react-native';
+import { ScrollView } from 'react-native-gesture-handler';
 
 const CarShowScreen = () => {
-
-    const router = useRouter()
-
-    const handleClick = () => {
-        router.push('/seatChoice')
-    }
   return (
-    <SafeAreaView>
-      <Text>CarShowScreen</Text>
-      <ButtonField click={handleClick} text="Choose Seat"/>
-    </SafeAreaView>
+    <View>
+      <View className='flex-row justify-between items-center px-4 h-[80px] bg-gray-200 border-b-[1px] border-b-gray-300 rounded-md'>
+        <View>
+          <Text className='text-2xl font-bold'>Yangon-Mandalay</Text>
+          <Text className='pt-2'>Local Traveller, 1 Ticket(s)</Text>
+        </View>
+        <View>
+          <Feather name="edit" size={24} color="blue" />
+        </View>
+      </View>
+      <ScrollView className='mt-4 w-[94%] mx-auto h-[620px]' showsVerticalScrollIndicator={false}>
+        <CarCard />
+        <CarCard />
+        <CarCard />
+        <CarCard />
+      </ScrollView>
+    </View>
   )
 }
 
-export default CarShowScreen
+export default CarShowScreen;

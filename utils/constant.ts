@@ -1,4 +1,4 @@
 export type ButtonProps ={
-    click:()=>void;
+    click?:()=>void;
     text:string;
 }

@@ -4,11 +4,11 @@ import { Pressable, Text } from 'react-native';
 
 const ButtonField = ({click,text}:ButtonProps) => {
   return (
-    <Pressable className='bg-[var(--primary)] p-3 rounded-md hover:opacity-40' onPress={click}>
-        <Text className='text-2xl text-center text-white font-bold'>{text}</Text>
+    <Pressable className='bg-[var(--primary)] p-2 rounded-md hover:opacity-40' onPress={click}>
+        <Text className='text-xl text-center text-white font-bold'>{text}</Text>
     </Pressable>
   )
 }
 
-export default ButtonField
+export default ButtonField;
 
