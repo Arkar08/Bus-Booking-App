@@ -1,8 +1,12 @@
 import CarCard from '@/components/CarCard';
 import Feather from '@expo/vector-icons/Feather';
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Dimensions, Text, View } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
+
+
+const windowHeight = Dimensions.get('window').height;
+const mainHeight = windowHeight - 300;
 
 const CarShowScreen = () => {
   return (
@@ -16,7 +20,9 @@ const CarShowScreen = () => {
           <Feather name="edit" size={24} color="blue" />
         </View>
       </View>
-      <ScrollView className='mt-4 w-[94%] mx-auto h-[620px]' showsVerticalScrollIndicator={false}>
+      <ScrollView className='mt-4 w-[94%] mx-auto' style={{height:mainHeight}} showsVerticalScrollIndicator={false}>
+        <CarCard />
+        <CarCard />
         <CarCard />
         <CarCard />
         <CarCard />

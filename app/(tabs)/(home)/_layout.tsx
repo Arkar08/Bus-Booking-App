@@ -34,6 +34,18 @@ const HomeLayout = () => {
           headerBackVisible: false,
         }}
       />
+       <Stack.Screen
+        name="chooseSourceLocation"
+        options={{
+          title: "Choose Source Location",
+        }}
+      />
+      <Stack.Screen
+        name="chooseDesitination"
+        options={{
+          title: "Choose Destination Location",
+        }}
+      />
     </Stack>
   );
 };
