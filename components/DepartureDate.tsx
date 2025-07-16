@@ -62,5 +62,5 @@ const DepartureDate = () => {
   )
 }
 
-export default DepartureDate
+export default DepartureDate;
 

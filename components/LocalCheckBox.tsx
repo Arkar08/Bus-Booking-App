@@ -24,4 +24,4 @@ const LocalCheckBox = () => {
   )
 }
 
-export default LocalCheckBox
+export default LocalCheckBox;

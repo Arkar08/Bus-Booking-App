@@ -1,5 +1,5 @@
-import React from 'react'
-import { Text, View } from 'react-native'
+import React from 'react';
+import { Text, View } from 'react-native';
 
 const ChooseDesitination = () => {
   return (
@@ -9,4 +9,4 @@ const ChooseDesitination = () => {
   )
 }
 
-export default ChooseDesitination
+export default ChooseDesitination;

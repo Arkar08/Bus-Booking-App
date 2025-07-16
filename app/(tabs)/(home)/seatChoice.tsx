@@ -1,5 +1,5 @@
-import React from 'react'
-import { Text, View } from 'react-native'
+import React from 'react';
+import { Text, View } from 'react-native';
 
 const SeatChoiceScreen = () => {
   return (
@@ -9,4 +9,4 @@ const SeatChoiceScreen = () => {
   )
 }
 
-export default SeatChoiceScreen
+export default SeatChoiceScreen;

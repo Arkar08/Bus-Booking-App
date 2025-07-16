@@ -18,4 +18,4 @@ const FromToPosition = ({fromSourceClick,toDestinationClick}:FromToPositionProps
   )
 }
 
-export default FromToPosition
+export default FromToPosition;
