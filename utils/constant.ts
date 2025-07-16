@@ -3,3 +3,8 @@ export type ButtonProps ={
     text:string;
     padding:number;
 }
+
+export type FromToPositionProps = {
+    fromSourceClick:() =>void;
+    toDestinationClick:() =>void;
+}
