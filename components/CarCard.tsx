@@ -11,23 +11,23 @@ const CarCard = () => {
     router.push('/seatChoice')
   }
   return (
-    <View className='border-[1px] h-[250px] rounded-md mt-4'>
+    <View className='border-[0.5px] h-[250px] rounded-md mt-4'>
       <View className='h-[75%] px-2 flex-row justify-between items-center'>
         <View className='w-[60%]'>
-          <Text className='font-bold'>001</Text>
-          <Text className='font-bold'>Testings</Text>
-          <Text>Driver Name - <Text className='font-bold'>Aung Aung</Text></Text>
-          <Text>Departure_time - <Text>24/Jun/2025 3:00AM</Text></Text>
-          <Text>Arrival_time - <Text>24/Jun/2025 3:00AM</Text></Text>
+          <Text className='font-semibold pt-2'>001</Text>
+          <Text className='font-semibold pt-2'>Testings</Text>
+          <Text className='pt-2'>Driver Name - <Text className='font-semibold'>Aung Aung</Text></Text>
+          <Text className='pt-2'>Departure_time - <Text className='font-semibold'>24/Jun/2025 3:00AM</Text></Text>
+          <Text className='pt-2'>Arrival_time - <Text className='font-semibold'>24/Jun/2025 3:00AM</Text></Text>
         </View>
         <View>
-          <Text className='font-bold'>MMK <Text className='text-green-500'>16000 Ks</Text></Text>
+          <Text className='font-semibold'>MMK <Text className='text-green-500'>16000 Ks</Text></Text>
         </View>
       </View>
-      <View className='h-[25%] border-t-[1px] px-2'>
+      <View className='h-[20%] border-t-[0.5px] px-2'>
         <View className='flex-row gap-2 justify-between items-center mt-4'>
-            <ButtonField text='About Cars'/>
-            <ButtonField text='Choose Seat' click={chooseSeatPage}/>
+            <ButtonField text='About Cars' padding={6}/>
+            <ButtonField text='Choose Seat' click={chooseSeatPage} padding={6}/>
         </View>
       </View>
     </View>
