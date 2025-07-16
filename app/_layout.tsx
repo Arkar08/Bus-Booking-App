@@ -9,7 +9,12 @@ function NavLayout() {
   return (
     <>
       <Stack>
-        <Stack.Screen name="(tabs)" options={{headerShown:false}}/>
+        <Stack.Protected guard={false}>
+          <Stack.Screen name="(tabs)" options={{headerShown:false}}/>
+        </Stack.Protected>
+        <Stack.Protected guard={true}>
+          <Stack.Screen name='auth/login' options={{headerShown:false}}/>
+        </Stack.Protected>
       </Stack>
       <StatusBar style="light"/>
     </>
