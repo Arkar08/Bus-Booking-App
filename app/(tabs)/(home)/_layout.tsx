@@ -46,7 +46,7 @@ const HomeLayout = () => {
           title: "Choose Destination Location",
         }}
       />
-      <Stack.Screen name="orderPage" options={{title: "Orders",headerBackVisible: false,}}/>
+      <Stack.Screen name="orderPage" options={{title: "Orders",headerBackVisible: false,headerTitleAlign:'center'}}/>
     </Stack>
   );
 };
