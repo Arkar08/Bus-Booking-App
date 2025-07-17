@@ -9,10 +9,10 @@ function NavLayout() {
   return (
     <>
       <Stack>
-        <Stack.Protected guard={false}>
+        <Stack.Protected guard={true}>
           <Stack.Screen name="(tabs)" options={{headerShown:false}}/>
         </Stack.Protected>
-        <Stack.Protected guard={true}>
+        <Stack.Protected guard={false}>
           <Stack.Screen name='auth/login' options={{headerShown:false}}/>
           <Stack.Screen name='auth/register' options={{headerShown:false}}/>
         </Stack.Protected>

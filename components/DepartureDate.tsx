@@ -44,7 +44,7 @@ const DepartureDate = () => {
 
 
   return (
-    <View className='h-[60px] border-[0.5px] border-gray-400 mt-4 rounded-md bg-white flex justify-center'>
+    <View className='h-[60px] border-[0.2px] border-gray-400 mt-4 rounded-md bg-white flex justify-center'>
         {
           dateData.showDate && (
             <DateTimePicker mode='date' minimumDate={new Date()}  value={dateData.date} is24Hour locale="en-US" onChange={dateChange}/>

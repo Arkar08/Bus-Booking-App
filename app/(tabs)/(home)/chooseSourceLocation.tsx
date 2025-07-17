@@ -1,10 +1,21 @@
+import CityCards from '@/components/CityCards';
+import InputField from '@/components/InputField';
 import React from 'react';
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
 
 const ChooseSourceLocation = () => {
   return (
     <View>
-      <Text>ChooseSourceLocation</Text>
+      <View className='border-b-[0.5px] mt-2 pb-4 pt-2 rounded-md border-b-gray-400'>
+        <View className='w-[96%] mx-auto'>
+          <InputField placeholder="Search Soucre Location"/>
+        </View>
+      </View>
+      <View className='w-[96%] mx-auto mt-4'>
+        <CityCards />
+        <CityCards />
+        <CityCards />
+      </View>
     </View>
   )
 }

@@ -11,7 +11,7 @@ const CarCard = () => {
     router.push('/seatChoice')
   }
   return (
-    <View className='border-[0.5px] h-[250px] rounded-md mt-4'>
+    <View className='border-[0.2px] mt-2 border-gray-400 h-[250px] rounded-md bg-white px-2'>
       <View className='h-[75%] px-2 flex-row justify-between items-center'>
         <View className='w-[60%]'>
           <Text className='font-semibold pt-2'>001</Text>
@@ -21,7 +21,7 @@ const CarCard = () => {
           <Text className='pt-2'>Arrival_time - <Text className='font-semibold'>24/Jun/2025 3:00AM</Text></Text>
         </View>
         <View>
-          <Text className='font-semibold'>MMK <Text className='text-green-500'>16000 Ks</Text></Text>
+          <Text>MMK <Text className='text-green-500 font-semibold'>16000 Ks</Text></Text>
         </View>
       </View>
       <View className='h-[20%] border-t-[0.5px] px-2'>
