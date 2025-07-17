@@ -5,7 +5,7 @@ import { Dimensions, Text, View } from "react-native";
 
 const dimension = Dimensions.get('window').height;
 
-const maxHeight = dimension - 450;
+const maxHeight = dimension - 370;
 
 const orderPage = () => {
   return (
@@ -37,11 +37,11 @@ const orderPage = () => {
       <View style={{height:maxHeight,overflowY:'auto'}} className="px-3">
         <View className="mt-3">
           <Text className="mb-2">Traveller Name <Text className="text-red-600">*</Text></Text>
-          <InputField plaeholder="Enter Traveller Name"/>
+          <InputField placeholder="Enter Traveller Name"/>
         </View>
         <View className="mt-3">
           <Text className="mb-2">Phone Number <Text className="text-red-600">*</Text></Text>
-          <InputField plaeholder="09---------" keyboardType={'numeric'}/>
+          <InputField placeholder="09---------" keyboardType={'numeric'}/>
           <Text className="mt-1"> The confirmation SMS will be sent to this number.</Text>
         </View>
         <View className="mt-3 relative">

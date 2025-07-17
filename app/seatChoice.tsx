@@ -7,7 +7,7 @@ import { Dimensions, Text, View } from "react-native";
 import { FlatList } from "react-native-gesture-handler";
 
 const dimension = Dimensions.get("window").height;
-const maxHeight = dimension - 470;
+const maxHeight = dimension - 370;
 
 const SeatChoiceScreen = () => {
   const router = useRouter();
