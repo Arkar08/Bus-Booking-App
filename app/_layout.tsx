@@ -14,6 +14,7 @@ function NavLayout() {
         </Stack.Protected>
         <Stack.Protected guard={true}>
           <Stack.Screen name='auth/login' options={{headerShown:false}}/>
+          <Stack.Screen name='auth/register' options={{headerShown:false}}/>
         </Stack.Protected>
       </Stack>
       <StatusBar style="light"/>

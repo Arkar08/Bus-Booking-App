@@ -30,5 +30,5 @@ export type RegisterTypeProps = {
     email:string;
     name:string;
     password:string;
-    phoneNumber:string;
+    phone:string;
 }
