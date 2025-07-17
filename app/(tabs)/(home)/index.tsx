@@ -35,7 +35,7 @@ const HomeScreen = () => {
       <SeatCreate />
       <LocalCheckBox />
       <View className='w-[100%] mx-auto mt-8'>
-        <ButtonField click={handlePress} text="Search Now" padding={15}/>
+        <ButtonField click={handlePress} text="Search Now" padding={10}/>
       </View>
     </View>
   )

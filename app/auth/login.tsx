@@ -3,10 +3,9 @@ import InputField from "@/components/InputField";
 import { LoginTypeProps } from "@/utils/constant";
 import { Link } from "expo-router";
 import React, { useState } from "react";
-import { Dimensions, Image, Text, View } from "react-native";
+import { Dimensions, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-const images = require('../../assets/images/loginImage.png')
 
 const Login = () => {
 
@@ -35,10 +34,7 @@ const Login = () => {
     }
 
   return (
-    <SafeAreaView className="bg-white" style={{height:dimension}}>
-      <View className="w-[300px] h-[180px] mx-auto mt-4">
-        <Image source={images} className="w-[80%] h-[80%] mx-auto object-contain"/>
-      </View>
+    <SafeAreaView style={{height:dimension}} className="flex-1 justify-center">
       <View className="p-4 mt-4">
         <Text className="text-center text-3xl text-[var(--primary)] uppercase font-semibold">
           Login here
@@ -54,7 +50,7 @@ const Login = () => {
           <InputField secureTextEntry placeholder="Enter Password" value={loginUser.password} onChangeText={PasswordChange}/>
         </View>
 
-        <View className="mt-4">
+        <View className="mt-8">
           <ButtonField text="Login" padding={10} click={loginSubmit}/>
         </View>
         <View className="mt-4">

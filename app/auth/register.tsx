@@ -48,7 +48,7 @@ const register = () => {
     }
 
   return (
-    <SafeAreaView className="bg-white" style={{height:dimension}}>
+    <SafeAreaView style={{height:dimension}}>
         <View className="p-4 mt-12">
             <Text className="text-center text-3xl text-[var(--primary)] uppercase font-semibold">
                 Create Account
@@ -74,7 +74,7 @@ const register = () => {
                 <InputField secureTextEntry placeholder="Enter Password" value={registerUser.password} onChangeText={PasswordChange}/>
             </View>
 
-            <View className="mt-4">
+            <View className="mt-8">
                 <ButtonField text="Register" padding={10} click={loginSubmit}/>
             </View>
             <View className="mt-4">

@@ -20,7 +20,7 @@ const CarShowScreen = () => {
           <Feather name="edit" size={24} color="blue" />
         </View>
       </View>
-      <ScrollView className='mt-2 w-[94%] mx-auto' style={{height:mainHeight}} showsVerticalScrollIndicator={false}>
+      <ScrollView className='mt-2 w-[100%] px-3 mx-auto' style={{height:mainHeight}} showsVerticalScrollIndicator={false}>
         <CarCard />
         <CarCard />
         <CarCard />

@@ -25,9 +25,9 @@ const CarCard = () => {
         </View>
       </View>
       <View className='h-[20%] border-t-[0.5px] px-2'>
-        <View className='flex-row gap-2 justify-between items-center mt-4'>
-            <ButtonField text='About Cars' padding={6}/>
-            <ButtonField text='Choose Seat' click={chooseSeatPage} padding={6}/>
+        <View className='flex-row gap-2 justify-between items-center mt-2'>
+            <ButtonField text='About Cars' padding={4}/>
+            <ButtonField text='Choose Seat' click={chooseSeatPage} padding={4}/>
         </View>
       </View>
     </View>
