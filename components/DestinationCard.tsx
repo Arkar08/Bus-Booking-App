@@ -4,22 +4,22 @@ import { useRouter } from "expo-router";
 import React from "react";
 import { Pressable, Text } from "react-native";
 
-const CityCards = () => {
+const DestinationCard = () => {
 
-  const {sourceClick} = useSearch();
+  const {destinaionClick} = useSearch();
   const router = useRouter();
   
   const dataClick = (text:string) => {
-    sourceClick(text)
+    destinaionClick(text)
     router.push('/(tabs)/(home)')
   }
 
   return (
-    <Pressable className="border-[0.5px] p-3 mt-2 rounded-md flex-row justify-between items-center" onPress={()=>dataClick('Yangon')}>
+    <Pressable className="border-[0.5px] p-3 mt-2 rounded-md flex-row justify-between items-center" onPress={()=>dataClick('Mandalay')}>
       <Text style={{ fontSize: 16 }}>Yangon</Text>
       <Ionicons name="arrow-forward-outline" size={24} color="black" />
     </Pressable>
   );
 };
 
-export default CityCards;
+export default DestinationCard;

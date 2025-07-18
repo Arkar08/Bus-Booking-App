@@ -32,3 +32,24 @@ export type RegisterTypeProps = {
     password:string;
     phone:string;
 }
+
+export type SearchProps = {
+    seat:number;
+    increaseSeat:()=>void;
+    decreaseSeat:()=>void;
+    isLocalChecked:boolean;
+    isForeignChecked:boolean;
+    foreignClick:()=>void;
+    localClick:()=>void;
+    dateData:{
+        date:Date,
+        showDate:boolean,
+        textDate:string
+    };
+    departureTime:()=>void;
+    dateChange:(data1:any,data:any) =>void;
+    formPosition:string;
+    toPosition:string;
+    sourceClick:(data:string) => void;
+    destinaionClick:(data:string) => void;
+}
