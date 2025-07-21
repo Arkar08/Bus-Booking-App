@@ -1,8 +1,8 @@
 import ButtonField from "@/components/ButtonField";
 import InputField from "@/components/InputField";
-import { LoginTypeProps } from "@/utils/constant";
+import useAuth from "@/store/useAuth";
 import { Link } from "expo-router";
-import React, { useState } from "react";
+import React from "react";
 import { Dimensions, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -10,27 +10,11 @@ import { SafeAreaView } from "react-native-safe-area-context";
 const Login = () => {
 
     const dimension = Dimensions.get('window').height;
-    const [loginUser,setLoginUser] = useState<LoginTypeProps>(
-       {
-            email:"",
-            password:""
-       }
-    )
+    const {users,login,loginChange} = useAuth();
 
-    const PasswordChange = (text:string) => {
-        setLoginUser((prev)=>({
-            ...prev,password:text
-        }))
-    }
-
-    const EmailChange = (text:string) => {
-        setLoginUser((prev)=>({
-            ...prev,email:text
-        }))
-    }
 
     const loginSubmit = () => {
-        console.log(loginUser)
+        login()
     }
 
   return (
@@ -40,17 +24,17 @@ const Login = () => {
           Login here
         </Text>
 
-        <View className="mt-4">
+        <View className="mt-8">
           <Text className="mb-2 text-[var(--primary)]">Email<Text className="text-red-600 pl-2">*</Text></Text>
-          <InputField placeholder="Enter Email" keyboardType="email-address" value={loginUser.email} onChangeText={EmailChange}/>
-        </View>
-
-        <View className="mt-4">
-          <Text className="mb-2 text-[var(--primary)]">Password<Text className="text-red-600 pl-2">*</Text></Text>
-          <InputField secureTextEntry placeholder="Enter Password" value={loginUser.password} onChangeText={PasswordChange}/>
+          <InputField placeholder="Enter Email" keyboardType="email-address" value={users.email} onChangeText={(text:string)=> loginChange(text,'email')}/>
         </View>
 
         <View className="mt-8">
+          <Text className="mb-2 text-[var(--primary)]">Password<Text className="text-red-600 pl-2">*</Text></Text>
+          <InputField secureTextEntry placeholder="Enter Password" value={users.password} onChangeText={(text:string)=> loginChange(text,'password')}/>
+        </View>
+
+        <View className="mt-12">
           <ButtonField text="Login" padding={10} click={loginSubmit}/>
         </View>
         <View className="mt-4">

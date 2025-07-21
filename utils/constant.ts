@@ -59,3 +59,13 @@ export type SearchProps = {
     seatClick:(text:string) => void;
     choiceNationally:(text:string) => void;
 }
+
+export type AuthProps = {
+    isLoggedIn:boolean;
+    users:LoginTypeProps
+    login:() => void;
+    registerUsers:RegisterTypeProps;
+    loginChange:(text:string,name:any) => void;
+    registerChange:(text:string,name:any) =>void;
+    register:() =>void;
+}

@@ -18,7 +18,7 @@ const HomeScreen = () => {
 
   const handlePress = () => {
       searchListBtn()
-      router.push('/carShow')
+      router.push('/seats')
   }
 
   const fromSourceClick = () => {

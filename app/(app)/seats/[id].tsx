@@ -1,7 +1,7 @@
 import ButtonField from "@/components/ButtonField";
 import SeatItem from "@/components/SeatItem";
 import { Seats } from "@/utils/dummy";
-import { useRouter } from "expo-router";
+import { useLocalSearchParams, useRouter } from "expo-router";
 import React from "react";
 import { Dimensions, Text, View } from "react-native";
 import { FlatList } from "react-native-gesture-handler";
@@ -11,6 +11,8 @@ const maxHeight = dimension - 370;
 
 const SeatChoiceScreen = () => {
   const router = useRouter();
+  const {id} = useLocalSearchParams()
+  console.log(id)
 
   const continueClick = () => {
     console.log("hello");

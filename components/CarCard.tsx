@@ -8,7 +8,10 @@ const CarCard = () => {
   const router = useRouter()
 
   const chooseSeatPage = () => {
-    router.push('/seatChoice')
+    router.navigate({
+      pathname:"/seats/[id]",
+      params:{id:1}
+    })
   }
   return (
     <View className='border-[0.2px] mt-2 border-gray-400 h-[250px] rounded-md bg-white px-2'>
