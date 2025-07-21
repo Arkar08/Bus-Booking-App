@@ -11,7 +11,7 @@ const DestinationCard = () => {
   
   const dataClick = (text:string) => {
     destinaionClick(text)
-    router.push('/(tabs)/(home)')
+    router.push('/(tabs)')
   }
 
   return (

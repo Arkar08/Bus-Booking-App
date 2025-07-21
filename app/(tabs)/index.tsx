@@ -4,6 +4,7 @@ import DepartureDate from '@/components/DepartureDate'
 import FromToPosition from '@/components/FromToPosition'
 import LocalCheckBox from '@/components/LocalCheckBox'
 import SeatCreate from '@/components/SeatCreate'
+import useSearch from '@/store/useSearch'
 import { useRouter } from 'expo-router'
 import React from 'react'
 import { Dimensions, View } from 'react-native'
@@ -13,10 +14,11 @@ const dimension = Dimensions.get('window').height;
 const HomeScreen = () => {
 
   const router = useRouter();
-
+  const {searchListBtn} = useSearch()
 
   const handlePress = () => {
-    router.push('/carShow')
+      searchListBtn()
+      router.push('/carShow')
   }
 
   const fromSourceClick = () => {

@@ -11,7 +11,7 @@ const CityCards = () => {
   
   const dataClick = (text:string) => {
     sourceClick(text)
-    router.push('/(tabs)/(home)')
+    router.push('/(tabs)')
   }
 
   return (

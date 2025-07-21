@@ -32,24 +32,30 @@ export type RegisterTypeProps = {
     password:string;
     phone:string;
 }
+interface SearchList {
+    from:string;
+    to:string;
+    date:Date;
+    seat:number;
+    nationality:string;
+}
+
+interface ErrorListSearch {
+    errorFrom:boolean;
+    errorTo:boolean;
+    errorDate:boolean;
+    errorNationality:boolean;
+}
 
 export type SearchProps = {
-    seat:number;
-    increaseSeat:()=>void;
-    decreaseSeat:()=>void;
-    isLocalChecked:boolean;
-    isForeignChecked:boolean;
-    foreignClick:()=>void;
-    localClick:()=>void;
-    dateData:{
-        date:Date,
-        showDate:boolean,
-        textDate:string
-    };
+    showDate:boolean;
+    searchList:SearchList;
+    errorList:ErrorListSearch;
     departureTime:()=>void;
     dateChange:(data1:any,data:any) =>void;
-    formPosition:string;
-    toPosition:string;
     sourceClick:(data:string) => void;
     destinaionClick:(data:string) => void;
+    searchListBtn:() => void;
+    seatClick:(text:string) => void;
+    choiceNationally:(text:string) => void;
 }

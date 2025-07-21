@@ -1,96 +1,158 @@
-import { SearchProps } from "@/utils/constant";
+import { SearchProps } from './../utils/constant';
+
 import { create } from "zustand";
 
 const useSearch = create<SearchProps>((set,get) => ({
-  seat: 1,
-  isLocalChecked: false,
-  isForeignChecked: false,
-  dateData: {
-    date: new Date(),
-    showDate: false,
-    textDate: "",
+  showDate:false,
+  searchList:{
+    from:'',
+    to:"",
+    date:new Date(Date.UTC(new Date().getUTCFullYear(), new Date().getUTCMonth(), new Date().getUTCDate(), 0, 0, 0, 0)),
+    seat:1,
+    nationality:''
   },
-  formPosition:'',
-  toPosition:'',
+  errorList:{
+    errorFrom:false,
+    errorTo:false,
+    errorDate:false,
+    errorNationality:false
+  },
 
-  increaseSeat: () => {
+  seatClick: (text:string) => {
     set((state) => {
-      return { seat: state.seat + 1 };
+      if(text === 'decrese'){
+        return {
+          searchList:{
+            ...state.searchList,seat:state.searchList.seat  - 1
+          }
+        }
+      }else{
+        return {
+          searchList:{
+            ...state.searchList,seat:state.searchList.seat + 1
+          }
+        }
+      }
     });
   },
 
-  decreaseSeat: () => {
+  choiceNationally:(text:string) => {
     set((state) => {
-      return { seat: state.seat - 1 };
+     return {
+      searchList:{
+        ...state.searchList , nationality:text
+      },
+      errorList:{
+        ...state.errorList,errorNationality:false
+      }
+     }
     });
   },
 
-  localClick: () => {
-    set((state) => {
-      return {
-        isForeignChecked: false,
-        isLocalChecked: true,
-      };
-    });
-  },
-
-  foreignClick: () => {
-    set((state) => {
-      return {
-        isForeignChecked: true,
-        isLocalChecked: false,
-      };
-    });
-  },
 
   departureTime: () => {
     set((state)=>{
         return {
-            dateData:{
-                ...state.dateData,
-                showDate:!state.dateData.showDate
-            }
+           showDate:true
         }
     })
   },
+
   dateChange: ({ type }: any, selectDate: any) => {
     set((state) => {
       if (type === "set") {
         return {
-          dateData: {
-            ...state.dateData,
-            showDate: false,
-            textDate: selectDate,
-            date: selectDate,
+          searchList: {
+            ...state.searchList,
+              date:selectDate
           },
+          showDate:false,
+          errorList:{
+            ...state.errorList,
+            errorDate:false
+          }
         };
       } else {
-        console.log(state.dateData,'date')
-          state.departureTime();
+          return {
+            showDate:false
+          }
       }
-      return state;
     });
   },
+
   sourceClick:(data:string) => {
     set((state)=>{
         if(data !== ''){
             return {
-                formPosition:data
+                searchList:{
+                  ...state.searchList,
+                  from:data
+                },
+                errorList:{
+                  ...state.errorList,
+                  errorFrom:false
+                }
             }
         }
         return state;
     })
   },
+
   destinaionClick:(data:string) => {
     set((state)=>{
         if(data !== ''){
             return {
-                toPosition:data
+                searchList:{
+                  ...state.searchList,
+                  to:data
+                },
+                errorList:{
+                  ...state.errorList,
+                  errorTo:false
+                }
             }
         }
         return state;
     })
+  },
+
+
+  searchListBtn:() => {
+    const data = get()
+    set((state) => {
+      if(data.searchList.from === ''){
+        return {
+          errorList:{
+            ...state.errorList,
+            errorFrom:true
+          }
+        }
+      }else if(data.searchList.to === ''){
+         return {
+          errorList:{
+            ...state.errorList,
+            errorTo:true
+          }
+        }
+      }else if(data.searchList.date.toDateString() === new Date(Date.UTC(new Date().getUTCFullYear(), new Date().getUTCMonth(), new Date().getUTCDate(), 0, 0, 0, 0)).toDateString()){
+         return {
+            errorList:{
+              ...state.errorList,
+              errorDate:true
+            }
+          }
+      }else if(data.searchList.nationality === ''){
+         return {
+            errorList:{
+              ...state.errorList,
+              errorNationality:true
+            }
+          }
+      }
+      return state;
+    })
   }
+
 }));
 
 export default useSearch;

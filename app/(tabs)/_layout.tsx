@@ -9,7 +9,6 @@ const Tabslayout = () => {
     <Tabs
       screenOptions={{
         tabBarShowLabel: false,
-        headerShown: false,
         tabBarStyle: {
           position: "absolute",
           bottom: 34,
@@ -22,11 +21,19 @@ const Tabslayout = () => {
           alignItems: "center",
           justifyContent: "center",
         },
+        headerStyle: {
+          backgroundColor: "#4169E1",
+        },
+        headerTintColor: "#fff",
+        headerTitleStyle: {
+          fontWeight: "bold",
+        },
       }}
     >
       <Tabs.Screen
-        name="(home)"
+        name="index"
         options={{
+          title: "Bus-Booking-App",
           tabBarIcon: ({ focused }) => (
             <View
               style={{
@@ -56,6 +63,8 @@ const Tabslayout = () => {
       <Tabs.Screen
         name="history"
         options={{
+          title: "Booking History",
+          headerTitleAlign:'center',
           tabBarIcon: ({ focused }) => (
             <View
               style={{
@@ -85,6 +94,8 @@ const Tabslayout = () => {
       <Tabs.Screen
         name="profile"
         options={{
+          title: "Profile",
+          headerTitleAlign:'center',
           tabBarIcon: ({ focused }) => (
             <View
               style={{
