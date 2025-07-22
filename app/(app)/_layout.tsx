@@ -16,6 +16,7 @@ const AppLayout = () => {
           headerTitleStyle: {
             fontWeight: "bold",
           },
+          headerTitleAlign:'center'
         }}
       />
       <Stack.Screen
@@ -29,6 +30,7 @@ const AppLayout = () => {
           headerTitleStyle: {
             fontWeight: "bold",
           },
+          headerTitleAlign:'center'
         }}
       />
       <Stack.Screen
@@ -48,8 +50,42 @@ const AppLayout = () => {
           headerTitleStyle: {
             fontWeight: "bold",
           },
+          headerTitleAlign:'center'
         }}
       />
+      <Stack.Screen  name="orderList" options={{
+        title:"Order Lists",
+        headerStyle: {
+            backgroundColor: "#4169E1",
+          },
+          headerTintColor: "#fff",
+          headerTitleStyle: {
+            fontWeight: "bold",
+          },
+          headerTitleAlign:'center'
+      }}/>
+      <Stack.Screen name="changePassword" options={{
+        title:"Change Password",
+         headerStyle: {
+            backgroundColor: "#4169E1",
+          },
+          headerTintColor: "#fff",
+          headerTitleStyle: {
+            fontWeight: "bold",
+          },
+          headerTitleAlign:'center'
+      }}/>
+      <Stack.Screen  name="account" options={{
+        title:"Edit Profile",
+         headerStyle: {
+            backgroundColor: "#4169E1",
+          },
+          headerTintColor: "#fff",
+          headerTitleStyle: {
+            fontWeight: "bold",
+          },
+          headerTitleAlign:'center'
+      }}/>
     </Stack>
   );
 };

@@ -20,7 +20,12 @@ const useAuth = create<AuthProps>((set,get)=>({
     set((state) => {
         if(data.users.email !== '' && data.users.password !== ''){
             return {
-                isLoggedIn:true
+                isLoggedIn:true,
+                users:{
+                    ...state.users,
+                    email:'',
+                    password:""
+                }
             }
         }
         return state;
@@ -52,12 +57,26 @@ const useAuth = create<AuthProps>((set,get)=>({
     set((state) => {
         if(data.registerUsers.email !== '' && data.registerUsers.password !== '' && data.registerUsers.name !== '' && data.registerUsers.phone !== ''){
             return {
-                isLoggedIn:true
+                isLoggedIn:true,
+                registerUsers:{
+                    ...state.registerUsers,
+                    email:"",
+                    name:"",
+                    password:"",
+                    phone:""
+                }
             }
         }
         return state;
     })
    },
+   logout:() => {
+    set((state) => {
+        return {
+            isLoggedIn:false
+        }
+    })
+   }
 }))
 
 export default useAuth;

@@ -11,6 +11,7 @@ const layout = () => {
               headerTitleStyle: {
                 fontWeight: "bold",
               },
+              headerTitleAlign:'center'
     }}>
         <Stack.Screen name='index'options={{
               title: "Bus-Booking-App",

@@ -4,6 +4,7 @@ export type ButtonProps ={
     click?:()=>void;
     text:string;
     padding:number;
+    disabled?:boolean;
 }
 
 export type FromToPositionProps = {
@@ -68,4 +69,11 @@ export type AuthProps = {
     loginChange:(text:string,name:any) => void;
     registerChange:(text:string,name:any) =>void;
     register:() =>void;
+    logout:() =>void;
+}
+
+export type SeatProps = {
+    choiceSeat:string[];
+    seatClick:(seat:string) =>void;
+    allSeats:any[];
 }

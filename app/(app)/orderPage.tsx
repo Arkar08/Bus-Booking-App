@@ -1,13 +1,22 @@
 import ButtonField from "@/components/ButtonField";
 import InputField from "@/components/InputField";
+import { useRouter } from "expo-router";
 import React from "react";
 import { Dimensions, Text, View } from "react-native";
 
 const dimension = Dimensions.get('window').height;
 
-const maxHeight = dimension - 370;
+const maxHeight = dimension - 380;
 
 const orderPage = () => {
+
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const router = useRouter();
+
+  const submitOrder = () => {
+    router.push('/(app)/(tabs)/history')
+  }
+
   return (
     <View className="relative">
       <View className="flex-row justify-between items-center px-4 py-2 bg-gray-100 border-b-[1px] border-b-gray-300 rounded-md">
@@ -58,7 +67,7 @@ const orderPage = () => {
       </View>
       <View className="h-[60px] w-[100%] px-3">
         <View className="w-[100%]">
-          <ButtonField text="Submit" padding={8}/>
+          <ButtonField text="Submit" padding={8} click={submitOrder}/>
         </View>
       </View>
     </View>

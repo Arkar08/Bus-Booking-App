@@ -27,9 +27,8 @@ const CarCard = () => {
           <Text>MMK <Text className='text-green-500 font-semibold'>16000 Ks</Text></Text>
         </View>
       </View>
-      <View className='h-[20%] border-t-[0.5px] px-2'>
-        <View className='flex-row gap-2 justify-between items-center mt-2'>
-            <ButtonField text='About Cars' padding={4}/>
+      <View className='h-[20%] border-t-[0.5px] px-2 relative'>
+        <View className='w-[50%] absolute right-2 mt-2'>
             <ButtonField text='Choose Seat' click={chooseSeatPage} padding={4}/>
         </View>
       </View>

@@ -6,7 +6,7 @@ import { ScrollView } from 'react-native-gesture-handler';
 
 
 const windowHeight = Dimensions.get('window').height;
-const mainHeight = windowHeight - 210;
+const mainHeight = windowHeight - 230;
 
 const CarShowScreen = () => {
   return (

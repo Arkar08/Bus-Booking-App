@@ -1,17 +1,19 @@
 import ButtonField from "@/components/ButtonField";
 import SeatItem from "@/components/SeatItem";
-import { Seats } from "@/utils/dummy";
+import useSeat from "@/store/useSeat";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import React from "react";
 import { Dimensions, Text, View } from "react-native";
 import { FlatList } from "react-native-gesture-handler";
 
 const dimension = Dimensions.get("window").height;
-const maxHeight = dimension - 370;
+const maxHeight = dimension - 390;
 
 const SeatChoiceScreen = () => {
+
   const router = useRouter();
   const {id} = useLocalSearchParams()
+  const {choiceSeat,allSeats} = useSeat();
   console.log(id)
 
   const continueClick = () => {
@@ -46,10 +48,10 @@ const SeatChoiceScreen = () => {
       </View>
       <View className="mt-4 px-3" style={{ height: maxHeight }}>
         <FlatList
-          data={Seats}
+          data={allSeats}
           numColumns={4}
-          renderItem={SeatItem}
-          keyExtractor={(index) => index}
+          renderItem={(item) => <SeatItem item={item}/>}
+          keyExtractor={(item) => item.id.toString()}
           contentContainerStyle={{ gap: 8 }}
           columnWrapperStyle={{ gap: 6, justifyContent: "space-between" }}
           showsVerticalScrollIndicator={false}
@@ -58,14 +60,19 @@ const SeatChoiceScreen = () => {
       <View className="mt-4 px-4 h-[80px] justify-between items-center border-t-[0.2px] gap-4 border-t-gray-400  rounded-md flex-row">
         <View>
           <View className="flex-row gap-4 pl-2">
-            <Text className="font-semibold text-xl">1 ,</Text>
-            <Text className="font-semibold text-xl">2 ,</Text>
-            <Text className="font-semibold text-xl">35 ,</Text>
-            <Text className="font-semibold text-xl">40 ,</Text>
+            {
+              choiceSeat.length > 0 && (
+                choiceSeat.map((seat:string,index) => {
+                  return (
+                    <Text className="font-semibold text-xl" key={index}>{seat},</Text>
+                  )
+                })
+              )
+            }
           </View>
         </View>
         <View className="w-[50%] h-[50px] ">
-          <ButtonField text="Continue" padding={7} click={continueClick} />
+          <ButtonField text="Continue" padding={7} click={continueClick} disabled={choiceSeat.length === 0}/>
         </View>
       </View>
     </View>

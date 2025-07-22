@@ -1,10 +1,15 @@
-import React from 'react'
-import { Text, View } from 'react-native'
+import HistoryCard from '@/components/HistoryCard';
+import React from 'react';
+import { View } from 'react-native';
 
 const HistoryScreen = () => {
   return (
     <View>
-      <Text>History</Text>
+      <View className='mt-4'>
+        <HistoryCard />
+        <HistoryCard />
+        <HistoryCard />
+      </View>
     </View>
   )
 }

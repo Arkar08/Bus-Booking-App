@@ -3,7 +3,7 @@ import { TextInput } from 'react-native';
 
 const InputField = ({...props}) => {
   return (
-    <TextInput {...props} className='p-3 rounded-md h-[50px] bg-white' />
+    <TextInput {...props} className='p-3 rounded-md h-[50px] bg-white'/>
   )
 }
 

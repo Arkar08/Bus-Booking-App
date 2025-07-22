@@ -2,15 +2,23 @@
 import ButtonField from "@/components/ButtonField";
 import InputField from "@/components/InputField";
 import useAuth from "@/store/useAuth";
+import Ionicons from "@expo/vector-icons/Ionicons";
 import { Link } from "expo-router";
-import React from "react";
-import { Dimensions, Text, View } from "react-native";
+import React, { useState } from "react";
+import { Dimensions, Pressable, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 const register = () => {
  
     const dimension = Dimensions.get('window').height;
     const {registerUsers,registerChange,register} = useAuth();
+    const [secureEye,setSecureEye] = useState(true)
+
+    
+    const eyeClick = () => {
+      setSecureEye(!secureEye)
+    }
+
 
     const registerSubmit = () => {
         register()
@@ -38,9 +46,14 @@ const register = () => {
                 <InputField placeholder="09*********" keyboardType="numeric" value={registerUsers.phone} onChangeText={(text:string) => registerChange(text,'phone')}/>
             </View>
 
-            <View className="mt-4">
+            <View className="mt-4 relative">
                 <Text className="mb-2 text-[var(--primary)]">Password<Text className="text-red-600 pl-2">*</Text></Text>
-                <InputField secureTextEntry placeholder="Enter Password" value={registerUsers.password} onChangeText={(text:string) => registerChange(text,'password')}/>
+                <InputField secureTextEntry={secureEye} placeholder="Enter Password" value={registerUsers.password} onChangeText={(text:string) => registerChange(text,'password')}/>
+                <Pressable  className='absolute right-[8%] top-[50%]' onPress={eyeClick}>
+                    {
+                    secureEye ? (<Ionicons name="eye-off-outline" size={24} color="black"/>) : (<Ionicons name="eye-outline" size={24} color="black"/>)
+                    }
+                </Pressable>
             </View>
 
             <View className="mt-8">
