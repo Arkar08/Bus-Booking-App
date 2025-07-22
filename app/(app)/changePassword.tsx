@@ -65,7 +65,7 @@ const ChangePasswordScreen = () => {
         </Pressable>
       </View>
       <View className='mt-8'>
-        <ButtonField text='Change Password' padding={8}/>
+        <ButtonField text='Change Password' padding={8} background={true}/>
       </View>
     </View>
   )

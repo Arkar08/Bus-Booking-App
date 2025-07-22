@@ -77,4 +77,7 @@ export type SeatProps = {
     choiceSeat:string[];
     seatClick:(seat:string) =>void;
     allSeats:any[];
+    modalVisiable:boolean;
+    openModal:() =>void;
+    closeModal:() => void;
 }

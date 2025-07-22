@@ -7,6 +7,7 @@ import { create } from 'zustand';
 const useSeat = create<SeatProps>((set) => ({
     choiceSeat: [] as string[],
     allSeats:Seats ,
+    modalVisiable:false,
 
     seatClick: (seat: string) => {
         set((state) => {
@@ -20,6 +21,21 @@ const useSeat = create<SeatProps>((set) => ({
             
             }
         );
+    },
+
+    openModal:() => {
+        set((state) => {
+            return {
+                modalVisiable:true
+            }
+        })
+    },
+    closeModal:() => {
+        set((state) => {
+            return {
+                modalVisiable:!state.modalVisiable
+            }
+        })
     }
 }));
 
