@@ -5,6 +5,7 @@ export type ButtonProps ={
     text:string;
     padding:number;
     disabled?:boolean;
+    background?:boolean
 }
 
 export type FromToPositionProps = {
